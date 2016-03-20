@@ -85,6 +85,11 @@ public class Minus {
 				}
 			}
 		}
+		for(int i=0;i<x;i++) {
+			if(newN3[i]=="-".charAt(0)) {
+				newN3[i]="0".charAt(0);
+			}
+		}
 		System.out.println(String.valueOf(newN3));
 	}
 }
