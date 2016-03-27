@@ -66,21 +66,19 @@ public class Minus {
 		newN3=new char[x];
 		for(int i=0;i<x;i++) {
 			newN3[i]=Integer.toString(Integer.parseInt(String.valueOf(newN1[i]))).charAt(0);
-			if(x-i==y+1) {
-				if(Integer.parseInt(String.valueOf(newN1[i+1]))<Integer.parseInt(String.valueOf(newN2[0]))) {
-					newN3[i]=Integer.toString(Integer.parseInt(String.valueOf(newN3[i]))-1).charAt(0);
-				}
-			}
 			if(x-i==y) {
 				for(int a=0;a<y;a++) {
-					newN3[i]=Integer.toString(Integer.parseInt(String.valueOf(newN1[i]))-Integer.parseInt(String.valueOf(newN2[a]))).charAt(0);
 					if(Integer.parseInt(String.valueOf(newN1[i]))-Integer.parseInt(String.valueOf(newN2[a]))<0) {
+						for(int c=i;c>=0;c--) {
+							if(Integer.parseInt(String.valueOf(newN3[c-1]))>0) {
+								newN3[c-1]=Integer.toString(Integer.parseInt(String.valueOf(newN3[c-1]))-1).charAt(0);
+								break;
+							}
+						}
 						newN3[i]=Integer.toString(Integer.parseInt(String.valueOf(newN1[i]))-Integer.parseInt(String.valueOf(newN2[a]))+10).charAt(0);
 					}
-					if(a+1<y) {
-						if(Integer.parseInt(String.valueOf(newN1[i+1]))<Integer.parseInt(String.valueOf(newN2[a+1]))) {
-							newN3[i]=Integer.toString(Integer.parseInt(String.valueOf(newN3[i]))-1).charAt(0);
-						}
+					else {
+						newN3[i]=Integer.toString(Integer.parseInt(String.valueOf(newN1[i]))-Integer.parseInt(String.valueOf(newN2[a]))).charAt(0);
 					}
 					i++;
 				}
