@@ -38,7 +38,7 @@ public class Minus {
 				System.out.println("Please change another one,there must be something not belong to numbers.");
 				n2=input.next();
 			}
-		}
+		}//Only Integer
 		if(n1.length()<n2.length()) {
 			String n3=n1;
 			n1=n2;
@@ -56,7 +56,7 @@ public class Minus {
 					break;
 				}
 			}
-		}
+		}//只有大對小
 		newN1 = new char[n1.length()];
 		for(int i=0;i<n1.length();i++)newN1[i] = n1.charAt(i);
 		newN2 = new char[n2.length()];
@@ -79,7 +79,7 @@ public class Minus {
 							}
 						}
 						newN3[i]=Integer.toString(Integer.parseInt(String.valueOf(newN1[i]))-Integer.parseInt(String.valueOf(newN2[a]))+10).charAt(0);
-					}
+					}//如果減掉之後小於零就向前借
 					else {
 						newN3[i]=Integer.toString(Integer.parseInt(String.valueOf(newN1[i]))-Integer.parseInt(String.valueOf(newN2[a]))).charAt(0);
 					}
@@ -91,7 +91,7 @@ public class Minus {
 			if(newN3[i]=="-".charAt(0)) {
 				newN3[i]="0".charAt(0);
 			}
-		}
+		}//若互減後等於零，它會顯示-，此for只為將此矯正
 		for(int i=0;i<x;i++) {
 			if(newN3[i]=="0".charAt(0)) {
 				newN3[i]=" ".charAt(0);
@@ -99,7 +99,7 @@ public class Minus {
 			else {
 				break;
 			}
-		}
+		}//不寫這個會出現00000000123之類的玩意兒
 		System.out.println(String.valueOf(newN3));
 	}
 }
