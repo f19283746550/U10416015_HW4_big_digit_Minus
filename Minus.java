@@ -74,6 +74,9 @@ public class Minus {
 								newN3[c-1]=Integer.toString(Integer.parseInt(String.valueOf(newN3[c-1]))-1).charAt(0);
 								break;
 							}
+							else {
+								newN3[c-1]="9".charAt(0);
+							}
 						}
 						newN3[i]=Integer.toString(Integer.parseInt(String.valueOf(newN1[i]))-Integer.parseInt(String.valueOf(newN2[a]))+10).charAt(0);
 					}
